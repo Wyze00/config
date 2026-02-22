@@ -1,0 +1,110 @@
+{	
+	"Console_log" : {
+		"prefix" : "logw",
+		"body" : "console.log($1);",
+		"description": "console log"
+	},
+
+	"Let" : {
+		"prefix" : "letw",
+		"body" : "let $1 = $3;"
+	},
+
+	"Const" : {
+		"prefix" : "conw",
+		"body" : "const $1 = $3;"
+	},
+
+	"Function" : {
+		"prefix" : "funw",
+		"body" : [
+			"const $1 = ${2:async }($3) => {",
+			"    $4",
+			"};"
+		]
+	},
+
+	"Anonymus function" : {
+		"prefix" : "funaw",
+		"body" : [
+			"${1:async }function ${2:fnName}($3) {",
+			"    $4",
+			"}"
+		]
+	},
+
+	"Arrowfunction" : {
+		"prefix" : "afunw",
+		"body" : [
+			"${1:async }($2) => {",
+			"    $3",	
+			"}"
+		]
+	},
+
+	"Jika" : {
+		"prefix" : "ipw",
+		"body" : [
+			"if($1) {",
+			"    $2",
+			"} $3"
+		]
+	},
+
+	"Selain itu" : {
+		"prefix" : "eipw",
+		"body" : [
+			"else if($1) {",
+			"    $2",
+			"} $3"
+		]
+	},
+	
+	"Jika tidak" : {
+	"prefix" : "elsw",
+	"body" : [
+			"else {",
+			"    $1",
+			"}$2"
+		]
+	},
+
+	"Untuk" : {
+		"prefix" : "forw",
+		"body" : [
+			"for($1 ; $2 ; $3) {",
+			"    $4",
+			"}"
+		]
+	},
+
+	"import" : {
+		"prefix": "impw",
+		"body" : "import {$2} from '$1';"
+	},
+
+	"Function Call 2 param": {
+		"prefix": "fcw",
+		"body": [
+			"${1:fnName}($2)${0:;}"
+		]
+	},
+	"describe": {
+		"prefix": "desw",
+		"body": ["describe('$1', ${2:async }() => {",
+    			"    $3",
+				"});"	
+		]
+	},
+	"it": {
+		"prefix": "itw",
+		"body": ["it('$1', ${2:async }() => {",
+    			"    $3",
+				"});"	
+		]
+	},
+	"expect": {
+		"prefix": "expw",
+		"body": "expect($1).${2:toBe}($3);"
+	}
+}
