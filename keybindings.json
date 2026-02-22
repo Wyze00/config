@@ -11,4 +11,20 @@
         "key": "ctrl+shift+space",
         "command": "cursorLeft"
     },
-]   
+    {
+        "key": "ctrl+shift+j",
+        "command": "cursorHome"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "cursorEnd"
+    },
+    {
+        "key": "ctrl+shift+u",
+        "command": "cursorUp"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "cursorDown"
+    },
+]
