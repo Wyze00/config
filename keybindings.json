@@ -1,0 +1,14 @@
+[
+    {
+        "key": "ctrl+'",
+        "command": "eslint.executeAutofix"
+    },
+    {
+        "key": "shift+space",
+        "command": "cursorRight"
+    },
+    {
+        "key": "ctrl+shift+space",
+        "command": "cursorLeft"
+    },
+]   
