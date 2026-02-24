@@ -10,15 +10,15 @@
 		"body" : "let $1${2::} = $3;"
 	},
 
-	"cont" : {
+	"const" : {
 		"prefix" : "conw",
-		"body" : "const $key${2::} = $3object;",
+		"body" : "const $1${2::} = $3;",
 	},
 
 	"variable with arrow function" : {
 		"prefix" : "funw",
 		"body" : [
-			"const $1 = ${2:async key($3)${4::}object => {",
+			"const $1 = ${2:async }($3)${4::} => {",
 			"    $5",
 			"};"
 		]
