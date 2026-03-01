@@ -1,3 +1,8 @@
+require "nvchad.mappings"
+
+local map = vim.keymap.set
+map("n", ";", ":", { desc = "CMD enter command mode" })
+
 -- Insert Cursor
 map("i", "<S-CR>", "<ESC>o", { desc = "InputDown" })
 map("i", "<S-C-Enter>","<ESC>O", {desc = "InputUp"})
