@@ -1,0 +1,204 @@
+{	
+	"console log" : {
+		"prefix" : "logw",
+		"body" : "console.log($1);",
+		"description": "console log"
+	},
+
+	"let" : {
+		"prefix" : "letw",
+		"body" : "let $1${2::} = $3;"
+	},
+
+	"const" : {
+		"prefix" : "conw",
+		"body" : "const $1${2::} = $3;",
+	},
+
+	"variable with arrow function" : {
+		"prefix" : "funw",
+		"body" : [
+			"const $1 = ${2:async }($3)${4::} => {",
+			"    $5",
+			"};"
+		]
+	},
+
+	"function" : {
+		"prefix" : "funaw",
+		"body" : [
+			"${1:async }function ${2:fnName}($3)${4::} {",
+			"    $5",
+			"}"
+		]
+	},
+
+	"arrow function" : {
+		"prefix" : "afunw",
+		"body" : [
+			"${1:async }($2)${3::} => {",
+			"    $4",	
+			"}"
+		]
+	},
+
+	"if" : {
+		"prefix" : "ifw",
+		"body" : [
+			"if (${1:condition}) {",
+			"    $2",
+			"} $3"
+		]
+	},
+
+	"else if" : {
+		"prefix" : "elifw",
+		"body" : [
+			"else if (${1:condition}) {",
+			"    $2",
+			"} $3"
+		]
+	},
+	
+	"else" : {
+	"prefix" : "elsew",
+	"body" : [
+			"else {",
+			"    $1",
+			"}$2"
+		]
+	},
+
+	"for" : {
+		"prefix" : "forw",
+		"body" : [
+			"for (${1:let i = 0} ; ${2:condition} ; $3) {",
+			"    $4",
+			"} $0"
+		]
+	},
+
+	"for in" : {
+		"prefix": "forinw",
+		"body": [
+			"for (const ${1:value} in ${2:object}) {",
+			"    $3",
+			"} $0"
+		]
+	},
+
+	"for of" : {
+		"prefix": "forofw",
+		"body": [
+			"for (const ${1:key} of ${2:object}) {",
+			"    $3",
+			"} $0"
+		]
+	},
+
+	"while" : {
+		"prefix": "whilew",
+		"body": [
+			"while (${1:condition}) {",
+			"    $2",
+			"} $0"
+		]
+	},
+
+	"do while": {
+		"prefix": "dowhilew",
+		"body": [
+			"do {",
+			"    $2",
+			"} while (${1:condition}); $0"
+		]
+	},
+
+	"import" : {
+		"prefix": "impw",
+		"body" : "import {$2} from '$1';"
+	},
+
+	"function call": {
+		"prefix": "fcw",
+		"body": [
+			"${1:fnName}($2)${0:;}"
+		]
+	},
+	"describe": {
+		"prefix": "desw",
+		"body": ["describe('$1', ${2:async }() => {",
+    			"    $3",
+				"});"	
+		]
+	},
+	"it": {
+		"prefix": "itw",
+		"body": ["it('$1', ${2:async }() => {",
+    			"    $3",
+				"});"	
+		]
+	},
+	"expect": {
+		"prefix": "expw",
+		"body": "expect($1).${2:toBe}($3);"
+	},
+
+	"export_default_function": {
+		"prefix": "edfw",
+		"body": [
+			"export default function ${1:fnName}($2): React.JSX.Element${3: | null} {",
+			"    $6",
+			"",
+			"    return (",
+			"        <$4>",
+			"            $5",
+			"        </$4>",
+			"    );",
+			"}"
+		]
+	},
+
+	"return": {
+		"prefix": "retw",
+		"body": [
+			"return (",
+			"    <$1>",
+			"        $2",
+			"    </$1>",
+			"); $0"
+		]
+	},
+
+	"useState": {
+		"prefix": "usw",
+		"body": "const [${1:state}, ${2:setState}] = useState<${3:type}>(${4:initialState});"
+	},
+
+	"useEffect": {
+		"prefix": "uew",
+		"body": [
+			"useEffect(() => {",
+			"    $1",
+			"}, [${2:dependency}]);"
+		]
+	},
+
+	"useMemo": {
+		"prefix": "umw",
+		"body": [
+			"const ${1:varName} = useMemo(() => {",
+			"    return $2;",
+			"}, [${3:dependency}]);"
+		]
+	},
+
+	"useCallback": {
+		"prefix": "ucw",
+		"body": [
+			"const ${1:varName} = useCallback(() => {",
+			"    $2;",
+			"}, [${3:dependency}]);"
+		]
+	}
+}
