@@ -9,3 +9,6 @@
 
 # NVIM_NVCHAD
 ## /home/<user>/.config/nvim/lua/mappings.lua
+
+## FONT
+- RobotoMono Nerd Fonts
