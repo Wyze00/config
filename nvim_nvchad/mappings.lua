@@ -82,16 +82,16 @@ map("n", "<A-n>", ":move .+1<CR>==", { desc = "Move Current Line Down 1 Line" })
 map("n", "<A-Up>", ":move .-2<CR>==", { desc = "Move Line Up 1 Line" })
 map("n", "<A-Down>", ":move .+1<CR>==", { desc = "Move Current Line Down 1 Line" })
 
--- Duplicate
+-- Duplicate 
 map({ "n", "i" }, "<S-A-u>", "<Esc>yyP", { desc = "Duplicate Line Up" })
 map({ "n", "i" }, "<S-A-n>", "<Esc>yyp", { desc = "Duplicate Line Down" })
 map({ "n", "i" }, "<S-A-Up>", "<Esc>yyP", { desc = "Duplicate Line Up" })
 map({ "n", "i" }, "<S-A-Down>", "<Esc>yyp", { desc = "Duplicate Line Down" })
 
-map("v", "<S-A-u>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Up" })
-map("v", "<S-A-n>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Down" })
-map("v", "<S-A-Up>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Up" })
-map("v", "<S-A-Down>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Down" })
+map("v", "<S-A-u>", ":co '<-1<CR>gv", { desc = "Duplicate Line Up" })
+map("v", "<S-A-n>", ":co '><CR>gv", { desc = "Duplicate Line Down" })
+map("v", "<S-A-Up>", ":co '<-1<CR>gv", { desc = "Duplicate Line Up" })
+map("v", "<S-A-Down>", ":co '><CR>gv", { desc = "Duplicate Line Down" })
 
 -- Tab
 map("v", "<Tab>", ">gv", { desc = "Indentasi ke kanan" })
@@ -99,14 +99,17 @@ map("v", "<S-Tab>", "<gv", { desc = "Indentasi ke kiri" })
 
 -- Command
 map("i", "<C-z>", "<ESC>ua", {desc = "Undo"})
-map("i", "<C-s>", "<CMD>w<CR>", {desc = "Save File"})
 map("i", "<C-x>", "<ESC>ddi", {desc = "Delete One Line"})
-map("i", "<C-a>", "<ESC>gg0v<S-g>$", {desc = "Select All Lines"})
+map("i", "<C-a>", "<ESC>gg1v<S-g>$", {desc = "Select All Lines"})
+map("i", "<C-s>", "<CMD>w<CR>", {desc = "Save File"})
 
 map("n", "<C-z>", "u", {desc = "Undo"})
 map("n", "<C-x>", "ddi", {desc = "Delete One Line"})
 map("n", "<C-a>", "gg0v<S-g>$", {desc = "Select All Lines"})
 
 map("v", "<C-z>", "<ESC>uv", {desc = "Undo"})
-map("v", "<C-x>", "d", {desc = "Delete Highlight"})
+map("v", "<C-x>", "<CMD>w<CR>vgv", {desc = "Delete Highlight"})
+map("v", "<C-a>", "<ESC>gg0v<S-g>$", {desc = "Select All Lines"})
+map("v", "<C-s>", "<ESC><CMD>w<CR>vgv", {desc = "Save File"})
 map("v", "i", "<ESC>i", {desc = "Switch To Insert Mode"})
+
