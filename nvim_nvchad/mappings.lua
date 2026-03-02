@@ -82,16 +82,20 @@ map("n", "<A-n>", ":move .+1<CR>==", { desc = "Move Current Line Down 1 Line" })
 map("n", "<A-Up>", ":move .-2<CR>==", { desc = "Move Line Up 1 Line" })
 map("n", "<A-Down>", ":move .+1<CR>==", { desc = "Move Current Line Down 1 Line" })
 
--- Duplicate 
+-- Duplicate
 map({ "n", "i" }, "<S-A-u>", "<Esc>yyP", { desc = "Duplicate Line Up" })
-map({ "n", "i" }, "<S-A-Up>", "<Esc>yyP", { desc = "Duplicate Line Up" })
 map({ "n", "i" }, "<S-A-n>", "<Esc>yyp", { desc = "Duplicate Line Down" })
+map({ "n", "i" }, "<S-A-Up>", "<Esc>yyP", { desc = "Duplicate Line Up" })
 map({ "n", "i" }, "<S-A-Down>", "<Esc>yyp", { desc = "Duplicate Line Down" })
 
 map("v", "<S-A-u>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Up" })
-map("v", "<S-A-Up>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Up" })
 map("v", "<S-A-n>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Down" })
+map("v", "<S-A-Up>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Up" })
 map("v", "<S-A-Down>", "yO<ESC>Pvgv", { desc = "Duplicate Selection Down" })
+
+-- Tab
+map("v", "<Tab>", ">gv", { desc = "Indentasi ke kanan" })
+map("v", "<S-Tab>", "<gv", { desc = "Indentasi ke kiri" })
 
 -- Command
 map("i", "<C-z>", "<ESC>ua", {desc = "Undo"})
