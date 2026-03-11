@@ -1,107 +1,31 @@
-import { defineConfig } from 'eslint/config';
+import {
+    defineConfig, 
+} from 'eslint/config';
 import stylistic from '@stylistic/eslint-plugin';
+import tseslint from 'typescript-eslint';
+import eslint from '@eslint/js';
+import myStylisticRules from './rules/stylistic.rules.js';
 
 export default defineConfig([
+    tseslint.configs.recommended,
+    eslint.configs.recommended,
     {
+        languageOptions: {
+            parser: tseslint.parser,
+            parserOptions: {
+                project: true,
+            },
+        },
         plugins: {
-            '@stylistic': stylistic,
+            '@stylistic': stylistic, 
+            '@typescript-eslint': tseslint.plugin,
         },
         files: [
             './**/*.js',
+            './**/*.ts',
         ],
         rules: {
-            'semi': 'error',
-            '@stylistic/array-bracket-newline': [
-                'error',
-                'always',
-            ],
-            '@stylistic/array-bracket-spacing': [
-                'error',
-                'always',
-            ],
-            '@stylistic/array-element-newline': [
-                'error',
-                'always',
-            ],
-            '@stylistic/arrow-parens': [
-                'error',
-                'always',
-            ],
-            '@stylistic/arrow-spacing': [
-                'error',
-            ],
-            '@stylistic/block-spacing': [
-                'error',
-            ],
-            '@stylistic/brace-style': [
-                'error',
-                '1tbs',
-            ],
-            '@stylistic/comma-dangle': [
-                'error',
-                'always-multiline',
-            ],
-            '@stylistic/comma-spacing': [
-                'error',
-            ],
-            '@stylistic/comma-style': [
-                'error',
-                'last',
-            ],
-            '@stylistic/computed-property-spacing': [
-                'error',
-                'never',
-            ],
-            '@stylistic/curly-newline': [
-                'error',
-                'always',
-            ],
-            '@stylistic/dot-location': [
-                'error',
-                'property',
-            ],
-            '@stylistic/eol-last': [
-                'error',
-                'always',
-            ],
-            '@stylistic/function-call-argument-newline': [
-                'error',
-                'never',
-            ],
-            '@stylistic/function-call-spacing': [
-                'error',
-                'never',
-            ],
-            '@stylistic/function-paren-newline': [
-                'error',
-                'never',
-            ],
-            '@stylistic/implicit-arrow-linebreak': [
-                'error',
-                'beside',
-            ],
-            '@stylistic/indent': [
-                'error',
-                4,
-            ],
-            '@stylistic/key-spacing': [
-                'error',
-                {
-                    'beforeColon': false,
-                    'afterColon': true,
-                },
-            ],
-            '@stylistic/keyword-spacing': [
-                'error',
-                {
-                    'before': true,
-                    'after': true,
-                },
-            ],
-            '@stylistic/quotes': [
-                'error',
-                'single',
-            ],
+            ...myStylisticRules,
         },
     },
 ]);
