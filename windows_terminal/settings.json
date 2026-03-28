@@ -7,14 +7,6 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[13;6u"
-            },
-            "id": "User.sendInput.B8014EBD"
-        },
-        {
-            "command": 
-            {
-                "action": "sendInput",
                 "input": "\u001b[32;2u"
             },
             "id": "User.sendInput.A2FE21EB"
@@ -23,9 +15,9 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[1;6A"
+                "input": "\u001b[13;6u"
             },
-            "id": "User.sendInput.D0FADB7"
+            "id": "User.sendInput.B8014EBD"
         },
         {
             "command": 
@@ -39,6 +31,14 @@
             "command": 
             {
                 "action": "sendInput",
+                "input": "\u001b[1;6A"
+            },
+            "id": "User.sendInput.D0FADB7"
+        },
+        {
+            "command": 
+            {
+                "action": "sendInput",
                 "input": "\u001b[117;6u"
             },
             "id": "User.sendInput.306026A9"
@@ -47,17 +47,17 @@
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[107;6u"
+                "input": "\u001b[32;6u"
             },
-            "id": "User.sendInput.C9DF48DA"
+            "id": "User.sendInput.355D2F28"
         },
         {
             "command": 
             {
                 "action": "sendInput",
-                "input": "\u001b[32;6u"
+                "input": "\u001b[107;6u"
             },
-            "id": "User.sendInput.355D2F28"
+            "id": "User.sendInput.C9DF48DA"
         },
         {
             "command": 
@@ -83,7 +83,7 @@
             },
             "id": "User.sendInput.533E6C65"
         },
-            {
+        {
             "command": 
             {
                 "action": "sendInput",
@@ -100,6 +100,8 @@
             "id": "User.sendInput.432F13DB"
         }
     ],
+    "alwaysShowTabs": true,
+    "autoHideWindow": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{0dc7b969-e7bb-5dc9-9133-9a16fc2f70cf}",
@@ -118,24 +120,24 @@
             "keys": "ctrl+shift+up"
         },
         {
-            "id": "User.sendInput.5450AEA1",
-            "keys": "ctrl+shift+down"
+            "id": "User.sendInput.B8014EBD",
+            "keys": "ctrl+shift+enter"
         },
         {
             "id": "User.sendInput.A2FE21EB",
             "keys": "shift+space"
         },
         {
-            "id": "User.sendInput.B8014EBD",
-            "keys": "ctrl+shift+enter"
-        },
-        {
-            "id": "User.sendInput.F67DC8C4",
-            "keys": "ctrl+shift+j"
+            "id": "User.sendInput.5450AEA1",
+            "keys": "ctrl+shift+down"
         },
         {
             "id": "User.sendInput.355D2F28",
             "keys": "ctrl+shift+space"
+        },
+        {
+            "id": "User.sendInput.F67DC8C4",
+            "keys": "ctrl+shift+j"
         },
         {
             "id": "User.sendInput.8882FD6D",
@@ -166,6 +168,7 @@
             "keys": "ctrl+v"
         }
     ],
+    "minimizeToNotificationArea": false,
     "newTabMenu": 
     [
         {
@@ -178,10 +181,18 @@
         "list": 
         [
             {
+                "colorScheme": "One Half Pastel Corrected",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "font": 
+                {
+                    "face": "RobotoMono Nerd Font",
+                    "size": 14,
+                    "weight": "medium"
+                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
-                "name": "Windows PowerShell"
+                "name": "Windows PowerShell",
+                "opacity": 90
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
@@ -231,6 +242,7 @@
                 "font": 
                 {
                     "face": "RobotoMono Nerd Font",
+                    "size": 14,
                     "weight": "medium"
                 },
                 "foreground": null,
@@ -238,8 +250,25 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "opacity": 92,
+                "scrollbarState": "visible",
                 "source": "Microsoft.WSL",
                 "useAcrylic": false
+            },
+            {
+                "colorScheme": "One Half Pastel Corrected",
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe --login -i",
+                "font": 
+                {
+                    "face": "RobotoMono Nerd Font",
+                    "size": 14,
+                    "weight": "medium"
+                },
+                "guid": "{805d327d-b6f4-486a-a3bd-067a2e7d9e4b}",
+                "hidden": false,
+                "name": "Git Bash",
+                "opacity": 90,
+                "startingDirectory": "%USERPROFILE%",
+                "tabTitle": "Git Bash"
             }
         ]
     },
@@ -293,6 +322,7 @@
         }
     ],
     "showTabsFullscreen": false,
+    "showTabsInTitlebar": true,
     "themes": [],
     "useAcrylicInTabRow": true
 }
